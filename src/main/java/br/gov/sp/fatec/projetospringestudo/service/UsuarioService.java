@@ -1,3 +1,4 @@
+package br.gov.sp.fatec.projetospringestudo.service;
 
 import java.util.Optional;
 
@@ -13,20 +14,23 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepo;
 
-    public Usuario buscarPorId (Long id) {
+    public Usuario buscarPorId(Long id) {
         Optional<Usuario> usuarioOp = usuarioRepo.findById(id);
         if(usuarioOp.isPresent()) {
             return usuarioOp.get();
         }
-        throw new UsuarioNaoEncontradoException("Id inválido!");
+        throw new IllegalArgumentException("Id inválido!");
     }
 
-    public Usuario novoUsuario(Usuario usuario) {
-        if(usuario == null ||
-                usuario.getNome() == null ||
-                usuario.getSenha() == null) {
+    public Usuario novoUsuario (Usuario usuario) { 
+        if (usuario == null ||
+        usuario.getNome() == null ||
+        usuario.getSenha() == null) {
             throw new IllegalArgumentException("Nome e senha inválidos!");
         }
         return usuarioRepo.save(usuario);
     }
 }
+
+    
+

@@ -13,13 +13,13 @@ public class Usuario {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "urs_id")
+    @Column (name = "usr_id")
     private Long id;
 
-    @Column (name = "urs_nome")
+    @Column (name = "usr_nome")
     private String nome;
 
-    @Column (name = "urs_senha")
+    @Column (name = "usr_senha")
     private String senha;
     
     public Usuario (String nome, String senha) {
