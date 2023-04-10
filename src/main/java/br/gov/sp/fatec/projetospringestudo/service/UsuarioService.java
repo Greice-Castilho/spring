@@ -1,5 +1,6 @@
 package br.gov.sp.fatec.projetospringestudo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,13 @@ import br.gov.sp.fatec.projetospringestudo.entity.Usuario;
 import br.gov.sp.fatec.projetospringestudo.repository.UsuarioRepository;
 
 @Service
-public class UsuarioService {
+public class UsuarioService implements IUsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepo;
+
+    public List<Usuario> buscarTodosUsuarios() {
+        return usuarioRepo.findAll();
 
     public Usuario buscarPorId(Long id) {
         Optional<Usuario> usuarioOp = usuarioRepo.findById(id);
