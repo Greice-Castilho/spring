@@ -6,9 +6,9 @@ import br.gov.sp.fatec.projetospringestudo.entity.Usuario;
 
 public interface IUsuarioService {
 
-    public Usuario buscarPorId(Long id);
-
     public Usuario novoUsuario(Usuario usuario);
 
-    public List<Usuario> buscarTodos();    
+    public List<Usuario> buscarTodosUsuarios();
+
+    public Usuario buscarPorId(Long id);    
 }
