@@ -26,11 +26,7 @@ public class Usuario {
         this.nome = nome;
         this.senha = senha;
     }
-
-    public Usuario () {
-        //Faz nada 
-    }
-
+    
     public Long getId() {
         return id;
     }
